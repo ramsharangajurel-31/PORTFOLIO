@@ -18,7 +18,7 @@ export default function Navbar() {
     >
       <div className="navbar-container">
         <Link to="/" className="logo">
-          Ramsharan
+          Ram Sharan
         </Link>
 
         <button

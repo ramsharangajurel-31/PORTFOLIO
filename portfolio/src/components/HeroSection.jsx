@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import heroImage from '../assets/herosection.jpeg';
+import { Typewriter } from 'react-simple-typewriter';
+
+
 
 
 const HeroSection = () => {
@@ -22,7 +26,16 @@ const HeroSection = () => {
         </h1>
 
         <div className="role-wrapper">
-          <h2 className="hero-role"> Full Stack Developer</h2>
+          <h2 className="hero-role">
+            <Typewriter
+    words={['Full Stack Developer', 'Frontend Developer']}
+    loop={false}          // set true if you want it to repeat
+    cursor
+    cursorStyle="|"
+    typeSpeed={80}
+  deleteSpeed={50}        // typing speed in ms
+  />
+             <span className="underline"></span></h2> 
           <span className="role-badge">Available for Freelance</span>
         </div>
 
@@ -36,10 +49,10 @@ const HeroSection = () => {
         </div>
 
         <div className="hero-social">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener">
+          <a href="https://github.com/ramsharangajurel-31" target="_blank" rel="noopener">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+          <a href="https://linkedin.com/ramsharan-gajurel-0a704a256/" target="_blank" rel="noopener">
             <FaLinkedin />
           </a>
         </div>
@@ -52,7 +65,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 1 }} // Slightly after content
       >
-        <img src="/profile.webp" alt="Ramsharan Gajurel" />
+        <img src={heroImage} alt="Ramsharan Gajurel" />
       </motion.div>
 
       <div className="scroll-indicator">
