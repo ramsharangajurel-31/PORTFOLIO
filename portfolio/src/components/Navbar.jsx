@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 
-export default function Navbar() {
+
+export default function Navbar({ darkMode, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavItemClick = () => setMenuOpen(false);
@@ -37,7 +39,9 @@ export default function Navbar() {
         </ul>
 
         <div className="nav-right">
-          <FaSearch className="search-icon" />
+         <button className="theme-toggle" onClick={toggleTheme}>
+        {darkMode ? <FaSun /> : <FaMoon />}
+         </button>
           <Link to="/resume" className="btn-resume">Resume</Link>
         </div>
       </div>
