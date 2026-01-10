@@ -42,7 +42,9 @@ export default function Navbar({ darkMode, toggleTheme }) {
          <button className="theme-toggle" onClick={toggleTheme}>
         {darkMode ? <FaSun /> : <FaMoon />}
          </button>
-          <Link to="/resume" className="btn-resume">Resume</Link>
+         <a href="Ramsharan_CV.pdf" download className="btn-resume">
+                  Resume
+              </a>
         </div>
       </div>
     </motion.nav>

@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import heroImage from '../assets/herosection.jpeg';
+import heroImage from '../assets/herosection.jpg';
 import { Typewriter } from 'react-simple-typewriter';
+import {useNavigate} from 'react-router-dom';
 
 
 
@@ -10,6 +11,12 @@ import { Typewriter } from 'react-simple-typewriter';
 const HeroSection = () => {
   // Delay for hero animations (after Navbar)
   const heroTransition = { delay: 0.9, duration: 2 };
+  const navigate = useNavigate();
+
+  const handleHireClick = () => {
+    navigate("/contact");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <section className="hero" id="home">
@@ -44,8 +51,8 @@ const HeroSection = () => {
         </p>
 
         <div className="hero-buttons">
-          <a href="#contact" className="btn primary">Hire Me</a>
-          <a href="/resume" className="btn outline">Download CV</a>
+          <a href="/contact" className="btn primary">Hire Me</a>
+          <a href="/Ramsharan_CV.pdf" target="_blank" rel="noopener" className="btn outline">Download CV</a>
         </div>
 
         <div className="hero-social">
