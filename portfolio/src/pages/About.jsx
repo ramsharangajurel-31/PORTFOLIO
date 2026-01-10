@@ -1,5 +1,5 @@
 import React from "react";
-import AboutBanner from "../components/aboutbanner";
+import AboutBanner from "../components/Aboutbanner";
 import AboutImage from "../components/AboutImage";
 import AboutStats from "../components/AbboutStats";
 import AboutTimeline from "../components/AboutTimeLine";
