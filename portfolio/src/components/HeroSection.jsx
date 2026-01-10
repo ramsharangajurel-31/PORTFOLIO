@@ -68,9 +68,7 @@ const HeroSection = () => {
         <img src={heroImage} alt="Ramsharan Gajurel" />
       </motion.div>
 
-      <div className="scroll-indicator">
-        <span></span>
-      </div>
+   
     </section>
   );
 };

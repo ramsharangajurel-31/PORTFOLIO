@@ -359,34 +359,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Scroll Indicator */
-.scroll-indicator span {
-  width: 22px;
-  height: 35px;
-  border: 2px solid var(--accent);
-  border-radius: 20px;
-  display: block;
-  position: relative;
-}
-
-.scroll-indicator span::after {
-  content: "";
-  width: 4px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 6px;
-  transform: translateX(-50%);
-  animation: scroll 1.5s infinite;
-}
-
-@keyframes scroll {
-  0% { opacity: 0; top: 6px; }
-  50% { opacity: 1; }
-  100% { opacity: 0; top: 18px; }
-}
 
 /* ================= Mobile Hero ================= */
 @media (max-width: 768px) {
@@ -699,5 +671,239 @@ body {
 
   .footer {
     padding-bottom: 100px;
+  }
+}
+ /* contact */
+ .contact-page {
+  padding: 120px 8% 80px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.8rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* ===== Layout ===== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Info Cards ===== */
+.contact-info .info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.contact-info .icon {
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.contact-info h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ===== Form ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: transparent;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--bg-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, var(--accent), #38f9d7);
+  color: #fff;
+}
+
+/* ===== Social ===== */
+.contact-social {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.contact-social a {
+  font-size: 1.8rem;
+  color: var(--accent);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-social a:hover {
+  transform: translateY(-3px);
+  color: #38f9d7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .btn {
+    align-self: center;
+  }
+}
+ /* skill
+  */
+  .skills-section {
+  padding: 120px 8% 80px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.8rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ===== Tech Stack Row ===== */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 217, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tech-card svg {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.tech-name {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== Skill Cards ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.skill-card {
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 217, 255, 0.12);
+}
+
+.skill-header h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skill-bar {
+  height: 8px;
+  width: 100%;
+  background: #555;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.skill-percent {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .skill-percent {
+    top: auto;
+    bottom: 12px;
+    right: 15px;
+  }
+
+  .tech-card svg {
+    font-size: 1.7rem;
+  }
+
+  .tech-name {
+    font-size: 0.85rem;
   }
 }
