@@ -30,7 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
-        <Footer />
+        <Footer darkMode={darkMode} toggleTheme={toggleTheme} />
       </BrowserRouter>
     </div>
   );
