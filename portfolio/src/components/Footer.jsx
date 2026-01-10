@@ -1,26 +1,17 @@
-import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaFacebook,
-  FaArrowUp,
-  FaHome,
-  FaBriefcase,
-} from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaArrowUp, FaEnvelope } from "react-icons/fa";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 
-export default function Footer({ darkMode, accentColor = "#6c63ff" }) {
-  const [showTop, setShowTop] = useState(false);
+export default function Footer() {
+  const year = new Date().getFullYear();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowTop(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Scroll progress bar
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -28,86 +19,65 @@ export default function Footer({ darkMode, accentColor = "#6c63ff" }) {
 
   return (
     <>
-      {/* Main Footer */}
-      <footer
-        className={`footer ${darkMode ? "dark" : "light"}`}
-        style={{ "--accent": accentColor }}
-      >
-        <motion.div
-          className="footer-container"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          {/* Left */}
-          <div className="footer-left">
-            <h4>Ramsharan Gajurel</h4>
-            <p>
-              Frontend / Full Stack Developer <br />
-              Building modern web experiences
-            </p>
-          </div>
+      {/* Scroll Progress Bar */}
+      <motion.div className="scroll-progress" style={{ scaleX }} />
 
-          {/* Center */}
-          <div className="footer-center">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
+      <footer className="footer">
 
-          {/* Right */}
-          <div className="footer-right">
-            <a href="https://github.com" target="_blank" rel="noreferrer">
-              <FaGithub />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              <FaLinkedin />
-            </a>
-            <a href="mailto:your@email.com">
-              <FaEnvelope />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <FaFacebook />
-            </a>
-          </div>
-        </motion.div>
+        {/* Wave Animation */}
+        <div className="footer-wave"></div>
 
-        <div className="footer-bottom">
-          © {new Date().getFullYear()} Ramsharan Gajurel. All rights reserved.
+        <div className="footer-container">
+
+          {/* CTA */}
+          <motion.div
+            className="footer-cta"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3>Let’s Build Something Great Together</h3>
+            <a href="/contact" className="cta-btn">
+              Contact Me
+            </a>
+          </motion.div>
+
+          {/* Footer Content */}
+          <div className="footer-content">
+
+            {/* Left */}
+            <div className="footer-left">
+              <h4>Ramsharan Gajurel</h4>
+              <p>Full Stack Developer (MERN)</p>
+            </div>
+
+            {/* Social */}
+            <div className="footer-social">
+              <a href="mailto:ramsharan@email.com"><FaEnvelope /></a>
+              <a href="https://github.com/yourusername" target="_blank" rel="noreferrer"><FaGithub /></a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+            </div>
+
+            {/* Right */}
+            <div className="footer-right">
+              <p>© {year} All Rights Reserved</p>
+            </div>
+
+          </div>
         </div>
+
+        {/* Back To Top */}
+        <motion.button
+          className="back-to-top"
+          onClick={scrollToTop}
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FaArrowUp />
+        </motion.button>
+
       </footer>
-
-      {/* Scroll To Top Button */}
-      {showTop && (
-        <button className="scroll-top" onClick={scrollToTop}>
-          <FaArrowUp />
-        </button>
-      )}
-
-      {/* Mobile Sticky Footer */}
-      <div
-        className={`mobile-footer ${darkMode ? "dark" : "light"}`}
-        style={{ "--accent": accentColor }}
-      >
-        <a href="#home" aria-label="Home">
-          <FaHome />
-        </a>
-
-        <a href="#projects" aria-label="Projects">
-          <FaBriefcase />
-        </a>
-
-        <a href="#contact" aria-label="Contact">
-          <FaEnvelope />
-        </a>
-
-        <button onClick={scrollToTop} aria-label="Scroll to top">
-          <FaArrowUp />
-        </button>
-      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import {PortfolioImg } from "../assets/portfolio.png"
+import PortfolioImg from "../assets/portfolio.png"
 
 // Sample project data
 const projects = [

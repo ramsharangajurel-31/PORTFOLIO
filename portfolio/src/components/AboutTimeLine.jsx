@@ -15,17 +15,26 @@ export default function AboutTimeline() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         />
-
+          <TimelineItem
+          icon={<FaGraduationCap />}
+          title="Management (Computer Science)"
+          time="2021-2023"
+        />
         <TimelineItem
           icon={<FaGraduationCap />}
-          title="Bachelor in Computer Science"
-          time="2020 – 2024"
+          title="Bachelor in Infomation Technology (BIM)"
+          time="2023 Onwards"
+        />
+         <TimelineItem
+          icon={<FaGraduationCap />}
+          title="MERN Stack Training"
+          time="2025"
         />
 
         <TimelineItem
           icon={<FaLaptopCode />}
           title="Frontend / Full Stack Developer"
-          time="2024 – Present"
+          time="2025 – Present"
         />
       </div>
     </section>
