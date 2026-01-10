@@ -54,9 +54,9 @@ export default function Footer() {
 
             {/* Social */}
             <div className="footer-social">
-              <a href="mailto:ramsharan@email.com"><FaEnvelope /></a>
-              <a href="https://github.com/yourusername" target="_blank" rel="noreferrer"><FaGithub /></a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+              <a href="mailto:ramsharangajurelnp@email.com"><FaEnvelope /></a>
+              <a href="https://github.com/ramsharangajurel-31" target="_blank" rel="noreferrer"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/ram-sharan-gajurel-0a704a256/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
             </div>
 
             {/* Right */}

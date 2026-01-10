@@ -1,29 +1,30 @@
 import ProjectCard from "./ProjectCard";
 import PortfolioImg from "../assets/portfolio.png"
-
+import HospitalImg from "../assets/hospital.png"
+import BookImg from "../assets/bookstore.png"
 // Sample project data
 const projects = [
   {
     title: "Portfolio Website",
     description: "A personal portfolio website showcasing my projects and skills with animations and dark mode.",
     tech: ["React", "Framer Motion", "CSS"],
-    image: {PortfolioImg},
+    image: PortfolioImg,
     live: "https://yourportfolio.com",
     repo: "https://github.com/username/portfolio"
   },
   {
-    title: "E-commerce App",
-    description: "Full-stack e-commerce app with user authentication, product listing, and payment integration.",
+    title: "Hospital Webpage",
+    description: "Full-stack  app with user authentication, book appointment, get news as well as other various features.",
     tech: ["React", "Node.js", "MongoDB", "Express"],
-    image: "/assets/projects/ecommerce.png",
+    image: HospitalImg,
     live: "https://meddical.netlify.app/",
     repo: "https://github.com/ramsharangajurel-31/MEDDICAL_INTERN_WEBSITE"
   },
   {
-    title: "Blog Platform",
-    description: "A modern blog platform with markdown editor, authentication, and dynamic routing.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    image: "/assets/projects/blog.png",
+    title: "Online BookStore",
+    description: "A modern  platform to buy books as well as read bokks / admin Panel features to login up/ siggn up",
+    tech: ["React", "Node.js", "Express", "MongoDB" , "Vite", "Multer" , "Auth"],
+    image: BookImg,
     live: "https://minionlinebookstore.netlify.app/",
     repo: "https://github.com/ramsharangajurel-31/Book_Store"
   },

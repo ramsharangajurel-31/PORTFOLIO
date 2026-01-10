@@ -59,7 +59,7 @@ const HeroSection = () => {
           <a href="https://github.com/ramsharangajurel-31" target="_blank" rel="noopener">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/ramsharan-gajurel-0a704a256/" target="_blank" rel="noopener">
+          <a href="https://www.linkedin.com/in/ram-sharan-gajurel-0a704a256/" target="_blank" rel="noopener">
             <FaLinkedin />
           </a>
         </div>
