@@ -2,6 +2,7 @@ import ProjectCard from "./ProjectCard";
 import PortfolioImg from "../assets/portfolio.png";
 import HospitalImg from "../assets/hospital.png";
 import BookImg from "../assets/bookstore.png";
+import MiniJobPortal from "../assets/minijobportal.png"
 // Sample project data
 const projects = [
   {
@@ -36,7 +37,7 @@ const projects = [
     description:
       "Mini Job Portal is a web application that connects job seekers with employers. It features job listings with details, search and filter functionality, job bookmarking, and pagination for easy navigation.",
     tech: ["React", "CSS", "React Icons", "Framer Motion"],
-    image: BookImg,
+    image: MiniJobPortal,
     live: "https://minijobportal.netlify.app/",
     repo: "https://github.com/ramsharangajurel-31/React-Task",
   },
